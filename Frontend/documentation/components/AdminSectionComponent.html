@@ -1,0 +1,2598 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>e-bill documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">e-bill documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminSectionComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/admin-section/admin-section.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin-section</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ReactiveFormsModule</code>
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                                <code><a href="../components/AdminNavbarComponent.html" target="_self" >AdminNavbarComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./admin-section.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin-section.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#editSectionForm" >editSectionForm</a>
+                            </li>
+                            <li>
+                                <a href="#examForm" >examForm</a>
+                            </li>
+                            <li>
+                                <a href="#examFormControl" >examFormControl</a>
+                            </li>
+                            <li>
+                                <a href="#exams" >exams</a>
+                            </li>
+                            <li>
+                                <a href="#expandedQuestions" >expandedQuestions</a>
+                            </li>
+                            <li>
+                                <a href="#expandedSections" >expandedSections</a>
+                            </li>
+                            <li>
+                                <a href="#isEditMode" >isEditMode</a>
+                            </li>
+                            <li>
+                                <a href="#mediaUrl" >mediaUrl</a>
+                            </li>
+                            <li>
+                                <a href="#newQuestionOptions" >newQuestionOptions</a>
+                            </li>
+                            <li>
+                                <a href="#optionForm" >optionForm</a>
+                            </li>
+                            <li>
+                                <a href="#questionForm" >questionForm</a>
+                            </li>
+                            <li>
+                                <a href="#sectionForm" >sectionForm</a>
+                            </li>
+                            <li>
+                                <a href="#sections" >sections</a>
+                            </li>
+                            <li>
+                                <a href="#selectedExamId" >selectedExamId</a>
+                            </li>
+                            <li>
+                                <a href="#selectedSectionForEdit" >selectedSectionForEdit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addOption" >addOption</a>
+                            </li>
+                            <li>
+                                <a href="#addSection" >addSection</a>
+                            </li>
+                            <li>
+                                <a href="#closeEditPopup" >closeEditPopup</a>
+                            </li>
+                            <li>
+                                <a href="#initializeForms" >initializeForms</a>
+                            </li>
+                            <li>
+                                <a href="#isQuestionExpanded" >isQuestionExpanded</a>
+                            </li>
+                            <li>
+                                <a href="#isSectionExpanded" >isSectionExpanded</a>
+                            </li>
+                            <li>
+                                <a href="#loadExams" >loadExams</a>
+                            </li>
+                            <li>
+                                <a href="#loadSections" >loadSections</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectExam" >onSelectExam</a>
+                            </li>
+                            <li>
+                                <a href="#openEditPopup" >openEditPopup</a>
+                            </li>
+                            <li>
+                                <a href="#removeNewOption" >removeNewOption</a>
+                            </li>
+                            <li>
+                                <a href="#removeQuestion" >removeQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#removeSection" >removeSection</a>
+                            </li>
+                            <li>
+                                <a href="#resetQuestionForm" >resetQuestionForm</a>
+                            </li>
+                            <li>
+                                <a href="#saveEditedSection" >saveEditedSection</a>
+                            </li>
+                            <li>
+                                <a href="#saveQuestion" >saveQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#toggleQuestion" >toggleQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#toggleSection" >toggleSection</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, sectionService: <a href="../injectables/SectionActionService.html" target="_self">SectionActionService</a>, examService: <a href="../injectables/ExamService.html" target="_self">ExamService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sectionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SectionActionService.html" target="_self" >SectionActionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>examService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ExamService.html" target="_self" >ExamService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addOption"></a>
+                    <span class="name">
+                        <span ><b>addOption</b></span>
+                        <a href="#addOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addOption()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSection"></a>
+                    <span class="name">
+                        <span ><b>addSection</b></span>
+                        <a href="#addSection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addSection()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeEditPopup"></a>
+                    <span class="name">
+                        <span ><b>closeEditPopup</b></span>
+                        <a href="#closeEditPopup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeEditPopup()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="193"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:193</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initializeForms"></a>
+                    <span class="name">
+                        <span ><b>initializeForms</b></span>
+                        <a href="#initializeForms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initializeForms()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isQuestionExpanded"></a>
+                    <span class="name">
+                        <span ><b>isQuestionExpanded</b></span>
+                        <a href="#isQuestionExpanded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isQuestionExpanded(questionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="295"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:295</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>questionId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSectionExpanded"></a>
+                    <span class="name">
+                        <span ><b>isSectionExpanded</b></span>
+                        <a href="#isSectionExpanded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isSectionExpanded(sectionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="290"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:290</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>sectionId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadExams"></a>
+                    <span class="name">
+                        <span ><b>loadExams</b></span>
+                        <a href="#loadExams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadExams()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadSections"></a>
+                    <span class="name">
+                        <span ><b>loadSections</b></span>
+                        <a href="#loadSections"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadSections(examId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>examId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectExam"></a>
+                    <span class="name">
+                        <span ><b>onSelectExam</b></span>
+                        <a href="#onSelectExam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectExam(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openEditPopup"></a>
+                    <span class="name">
+                        <span ><b>openEditPopup</b></span>
+                        <a href="#openEditPopup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openEditPopup(section: <a href="../interfaces/SectionGetDTO.html" target="_self">SectionGetDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="180"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:180</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>section</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SectionGetDTO.html" target="_self" >SectionGetDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeNewOption"></a>
+                    <span class="name">
+                        <span ><b>removeNewOption</b></span>
+                        <a href="#removeNewOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeNewOption(optionText: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="232"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:232</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>optionText</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeQuestion"></a>
+                    <span class="name">
+                        <span ><b>removeQuestion</b></span>
+                        <a href="#removeQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeQuestion(section: <a href="../interfaces/SectionGetDTO.html" target="_self">SectionGetDTO</a>, questionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="257"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:257</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>section</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SectionGetDTO.html" target="_self" >SectionGetDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>questionId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeSection"></a>
+                    <span class="name">
+                        <span ><b>removeSection</b></span>
+                        <a href="#removeSection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeSection(sectionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="239"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:239</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>sectionId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetQuestionForm"></a>
+                    <span class="name">
+                        <span ><b>resetQuestionForm</b></span>
+                        <a href="#resetQuestionForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetQuestionForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="300"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:300</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveEditedSection"></a>
+                    <span class="name">
+                        <span ><b>saveEditedSection</b></span>
+                        <a href="#saveEditedSection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveEditedSection()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:200</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveQuestion"></a>
+                    <span class="name">
+                        <span ><b>saveQuestion</b></span>
+                        <a href="#saveQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveQuestion(section: <a href="../interfaces/SectionGetDTO.html" target="_self">SectionGetDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="141"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:141</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>section</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SectionGetDTO.html" target="_self" >SectionGetDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleQuestion"></a>
+                    <span class="name">
+                        <span ><b>toggleQuestion</b></span>
+                        <a href="#toggleQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleQuestion(questionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="280"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:280</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>questionId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleSection"></a>
+                    <span class="name">
+                        <span ><b>toggleSection</b></span>
+                        <a href="#toggleSection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleSection(sectionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="270"
+                                    class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:270</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>sectionId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editSectionForm"></a>
+                    <span class="name">
+                        <span ><b>editSectionForm</b></span>
+                        <a href="#editSectionForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="examForm"></a>
+                    <span class="name">
+                        <span ><b>examForm</b></span>
+                        <a href="#examForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="examFormControl"></a>
+                    <span class="name">
+                        <span ><b>examFormControl</b></span>
+                        <a href="#examFormControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.fb.control(&#x27;&#x27;, Validators.required)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exams"></a>
+                    <span class="name">
+                        <span ><b>exams</b></span>
+                        <a href="#exams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Exam.html" target="_self" >Exam[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="expandedQuestions"></a>
+                    <span class="name">
+                        <span ><b>expandedQuestions</b></span>
+                        <a href="#expandedQuestions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Set&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Set&lt;number&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="expandedSections"></a>
+                    <span class="name">
+                        <span ><b>expandedSections</b></span>
+                        <a href="#expandedSections"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Set&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Set&lt;number&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEditMode"></a>
+                    <span class="name">
+                        <span ><b>isEditMode</b></span>
+                        <a href="#isEditMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mediaUrl"></a>
+                    <span class="name">
+                        <span ><b>mediaUrl</b></span>
+                        <a href="#mediaUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newQuestionOptions"></a>
+                    <span class="name">
+                        <span ><b>newQuestionOptions</b></span>
+                        <a href="#newQuestionOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OptionPostDTO[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="optionForm"></a>
+                    <span class="name">
+                        <span ><b>optionForm</b></span>
+                        <a href="#optionForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="questionForm"></a>
+                    <span class="name">
+                        <span ><b>questionForm</b></span>
+                        <a href="#questionForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sectionForm"></a>
+                    <span class="name">
+                        <span ><b>sectionForm</b></span>
+                        <a href="#sectionForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sections"></a>
+                    <span class="name">
+                        <span ><b>sections</b></span>
+                        <a href="#sections"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SectionGetDTO[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedExamId"></a>
+                    <span class="name">
+                        <span ><b>selectedExamId</b></span>
+                        <a href="#selectedExamId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedSectionForEdit"></a>
+                    <span class="name">
+                        <span ><b>selectedSectionForEdit</b></span>
+                        <a href="#selectedSectionForEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SectionGetDTO | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin/admin-section/admin-section.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from &#x27;@angular/forms&#x27;;
+import { SectionActionService } from &#x27;../../services/section-action.service&#x27;;
+import { ExamService } from &#x27;../../services/exam.service&#x27;;
+import { SectionPostDTO, SectionGetDTO, QuestionPostDTO, OptionPostDTO, OptionGetDTO, Exam } from &#x27;../../Interface/exam.model&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { AdminNavbarComponent } from &#x27;../admin-navbar/admin-navbar.component&#x27;;
+
+@Component({
+  selector: &#x27;app-admin-section&#x27;,
+  templateUrl: &#x27;./admin-section.component.html&#x27;,
+  styleUrls: [&#x27;./admin-section.component.css&#x27;],
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, AdminNavbarComponent]  // Import necessary modules
+})
+export class AdminSectionComponent implements OnInit {
+  examForm!: FormGroup;
+  selectedExamId: number | null &#x3D; null;
+  sections: SectionGetDTO[] &#x3D; [];
+  exams: Exam[] &#x3D; [];
+  sectionForm!: FormGroup;
+  editSectionForm!: FormGroup;  // Form for editing a section
+  questionForm!: FormGroup;
+  optionForm!: FormGroup;
+  newQuestionOptions: OptionPostDTO[] &#x3D; [];  // Store options for the new question being added
+  expandedSections: Set&lt;number&gt; &#x3D; new Set&lt;number&gt;();  // Track expanded sections
+  expandedQuestions: Set&lt;number&gt; &#x3D; new Set&lt;number&gt;(); // Track expanded questions
+  selectedSectionForEdit: SectionGetDTO | null &#x3D; null; // Track the selected section for editing
+  isEditMode &#x3D; false;  // Control for showing the edit section popup
+  mediaUrl &#x3D; &#x27;&#x27;;
+
+  constructor(
+    private fb: FormBuilder,
+    private sectionService: SectionActionService,
+    private examService: ExamService
+  ) {}
+
+  ngOnInit(): void {
+    this.initializeForms();
+    this.loadExams();
+  }
+
+  // Initialize the form structures
+  initializeForms(): void {
+    this.sectionForm &#x3D; this.fb.group({
+      title: [&#x27;&#x27;, Validators.required],
+      numberOfQuestions: [0, [Validators.required, Validators.min(1)]],
+      totalMarks: [0, Validators.required],
+      passingMarks: [0, Validators.required]
+    });
+
+    this.editSectionForm &#x3D; this.fb.group({
+      title: [&#x27;&#x27;, Validators.required],
+      numberOfQuestions: [0, [Validators.required, Validators.min(1)]],
+      totalMarks: [0, Validators.required],
+      passingMarks: [0, Validators.required]
+    });
+
+    this.questionForm &#x3D; this.fb.group({
+      questionText: [&#x27;&#x27;, Validators.required],
+      isMultipleChoice: [false, Validators.required]
+    });
+
+    this.optionForm &#x3D; this.fb.group({
+      optionText: [&#x27;&#x27;, Validators.required],
+      isCorrect: [false]
+    });
+  }
+
+  // Load exams from the service
+  loadExams(): void {
+    this.examService.getExams().subscribe((data: Exam[]) &#x3D;&gt; {
+      this.exams &#x3D; data;
+    });
+  }
+  examFormControl &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);  // FormControl for the exam selection
+
+
+  // On selecting an exam, load the sections
+  onSelectExam(event: Event): void {
+    const examId &#x3D; (event.target as HTMLSelectElement).value;
+    if (examId) {
+      this.selectedExamId &#x3D; +examId;
+      this.loadSections(this.selectedExamId);
+    }
+  }
+
+  // Load sections for the selected exam
+  loadSections(examId: number): void {
+    this.sectionService.getSectionsByExamId(examId).subscribe((sections: SectionGetDTO[]) &#x3D;&gt; {
+      this.sections &#x3D; sections;
+      console.log(&#x27;Sections loaded for exam:&#x27;, examId, sections);
+    });
+  }
+
+  // Add a new section
+  addSection(): void {
+    if (this.sectionForm.invalid || !this.selectedExamId) {
+      return;
+    }
+
+    const newSection: SectionPostDTO &#x3D; {
+      examId: this.selectedExamId!,
+      title: this.sectionForm.value.title,
+      numberOfQuestions: this.sectionForm.value.numberOfQuestions,
+      totalMarks: this.sectionForm.value.totalMarks,
+      passingMarks: this.sectionForm.value.passingMarks,
+      questions: [],
+    };
+
+    this.sectionService.createSection(newSection).subscribe(() &#x3D;&gt; {
+      this.loadSections(this.selectedExamId!);
+      this.sectionForm.reset();
+      console.log(&#x27;New section added:&#x27;, newSection);
+    });
+  }
+
+// Function to add a new option
+addOption(): void {
+  if (this.optionForm.invalid) {
+    return;
+  }
+
+  const newOption: OptionPostDTO &#x3D; {
+    optionText: this.optionForm.value.optionText,
+    isCorrect: this.optionForm.value.isCorrect || false
+  };
+
+  this.newQuestionOptions.push(newOption);  // Add the option to the new question
+  this.optionForm.reset();
+  console.log(&#x27;Option added:&#x27;, newOption);
+
+  // Check if more than one correct option is selected and set isMultipleChoice accordingly
+  const correctOptionsCount &#x3D; this.newQuestionOptions.filter(option &#x3D;&gt; option.isCorrect).length;
+  this.questionForm.patchValue({
+    isMultipleChoice: correctOptionsCount &gt; 1  // Set true if more than one correct option
+  });
+}
+
+// Function to save the question
+saveQuestion(section: SectionGetDTO): void {
+  if (this.questionForm.invalid || this.newQuestionOptions.length &#x3D;&#x3D;&#x3D; 0) {
+    return;  // Ensure all question data is entered
+  }
+
+  const newQuestion: QuestionPostDTO &#x3D; {
+    questionText: this.questionForm.value.questionText,
+    isMultipleChoice: this.questionForm.value.isMultipleChoice,  // Send isMultipleChoice flag
+    createdDate: new Date(),
+    options: this.newQuestionOptions.map(option &#x3D;&gt; ({
+      optionText: option.optionText,
+      isCorrect: option.isCorrect
+    })),
+    MediaUrl: this.mediaUrl
+  };
+
+  console.log(&#x27;Question Data to be sent:&#x27;, newQuestion);
+
+  this.sectionService.addQuestion(section.sectionId, newQuestion).subscribe({
+    next: () &#x3D;&gt; {
+      section.questions.push({
+        ...newQuestion,
+        questionId: Math.random(),  // Temporary client-side ID
+        options: newQuestion.options.map((option, index) &#x3D;&gt; ({
+          optionId: index + 1,  // Temporary ID for frontend display
+          ...option
+        }))
+      });
+      console.log(&#x27;Question added successfully&#x27;);
+      this.resetQuestionForm();  // Reset the form and option list
+    },
+    error: (err) &#x3D;&gt; {
+      console.error(&#x27;Error adding question:&#x27;, err);
+    }
+  });
+}
+
+
+  // Open the edit popup with pre-filled section data
+  openEditPopup(section: SectionGetDTO): void {
+    this.isEditMode &#x3D; true;
+    this.selectedSectionForEdit &#x3D; section;
+
+    this.editSectionForm.patchValue({
+      title: section.title,
+      numberOfQuestions: section.numberOfQuestions,
+      totalMarks: section.totalMarks,
+      passingMarks: section.passingMarks
+    });
+  }
+
+  // Close the edit popup
+  closeEditPopup(): void {
+    this.isEditMode &#x3D; false;
+    this.selectedSectionForEdit &#x3D; null;
+    this.editSectionForm.reset();
+  }
+
+  // Save the edited section
+  saveEditedSection(): void {
+    if (this.editSectionForm.invalid || !this.selectedSectionForEdit) {
+      return;
+    }
+
+    const updatedSection: SectionPostDTO &#x3D; {
+      examId: this.selectedSectionForEdit.examId,
+      title: this.editSectionForm.value.title,
+      numberOfQuestions: this.editSectionForm.value.numberOfQuestions,
+      totalMarks: this.editSectionForm.value.totalMarks,
+      passingMarks: this.editSectionForm.value.passingMarks,
+      questions: [] // Always send an empty array for questions
+    };
+
+    console.log(&#x27;Edited Section Data:&#x27;, updatedSection);
+
+    this.sectionService.updateSection(this.selectedSectionForEdit.sectionId, updatedSection).subscribe({
+      next: () &#x3D;&gt; {
+        console.log(&#x27;Section updated successfully&#x27;);
+        this.loadSections(this.selectedExamId!);
+        this.closeEditPopup();
+      },
+      error: (err) &#x3D;&gt; {
+        console.error(&#x27;Error updating section:&#x27;, err);
+      }
+    });
+  }
+
+  
+  
+
+  // Remove an option from the new question (before saving)
+  removeNewOption(optionText: string): void {
+    this.newQuestionOptions &#x3D; this.newQuestionOptions.filter(option &#x3D;&gt; option.optionText !&#x3D;&#x3D; optionText);
+    console.log(&#x27;Option removed:&#x27;, optionText);
+  }
+
+  // Remove a section and call the API
+ // Remove a section and call the API after confirmation
+removeSection(sectionId: number): void {
+  const confirmation &#x3D; window.confirm(&#x27;Are you sure you want to delete this section?&#x27;);
+  
+  if (confirmation) {
+    this.sectionService.deleteSection(sectionId).subscribe({
+      next: () &#x3D;&gt; {
+        this.sections &#x3D; this.sections.filter(section &#x3D;&gt; section.sectionId !&#x3D;&#x3D; sectionId);
+        console.log(&#x27;Section removed with ID:&#x27;, sectionId);
+      },
+      error: (err) &#x3D;&gt; {
+        console.error(&#x27;Error removing section:&#x27;, err);
+      }
+    });
+  }
+}
+
+
+  // Remove a saved question from the section
+  removeQuestion(section: SectionGetDTO, questionId: number): void {
+    this.sectionService.deleteQuestion(questionId).subscribe({
+      next: () &#x3D;&gt; {
+        section.questions &#x3D; section.questions.filter(question &#x3D;&gt; question.questionId !&#x3D;&#x3D; questionId);
+        console.log(&#x27;Question removed with ID:&#x27;, questionId);
+      },
+      error: (err) &#x3D;&gt; {
+        console.error(&#x27;Error removing question:&#x27;, err);
+      }
+    });
+  }
+
+  // Toggle section expansion
+  toggleSection(sectionId: number): void {
+    if (this.expandedSections.has(sectionId)) {
+      this.expandedSections.delete(sectionId);
+    } else {
+      this.expandedSections.add(sectionId);
+    }
+    console.log(&#x27;Toggled section expansion for section ID:&#x27;, sectionId);
+  }
+
+  // Toggle question expansion
+  toggleQuestion(questionId: number): void {
+    if (this.expandedQuestions.has(questionId)) {
+      this.expandedQuestions.delete(questionId);
+    } else {
+      this.expandedQuestions.add(questionId);
+    }
+    console.log(&#x27;Toggled question expansion for question ID:&#x27;, questionId);
+  }
+
+  // Check if a section is expanded
+  isSectionExpanded(sectionId: number): boolean {
+    return this.expandedSections.has(sectionId);
+  }
+
+  // Check if a question is expanded
+  isQuestionExpanded(questionId: number): boolean {
+    return this.expandedQuestions.has(questionId);
+  }
+
+  // Reset question form and options list
+  resetQuestionForm(): void {
+    this.questionForm.reset();
+    this.newQuestionOptions &#x3D; [];
+  }
+
+ 
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-admin-navbar&gt;&lt;/app-admin-navbar&gt;
+&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
+  &lt;!-- Dropdown to select an exam --&gt;
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;exam&quot;&gt;Select Exam:&lt;/label&gt;
+    &lt;select class&#x3D;&quot;form-control select-exam&quot; id&#x3D;&quot;exam&quot; (change)&#x3D;&quot;onSelectExam($event)&quot; [formControl]&#x3D;&quot;examFormControl&quot;&gt;
+      &lt;option value&#x3D;&quot;&quot; disabled selected&gt;Please select exam&lt;/option&gt;
+      &lt;option *ngFor&#x3D;&quot;let exam of exams&quot; [value]&#x3D;&quot;exam.examId&quot;&gt;{{ exam.title }}&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+
+
+  &lt;!-- Add Section Form --&gt;
+  &lt;div *ngIf&#x3D;&quot;selectedExamId&quot;&gt;
+    &lt;div class&#x3D;&quot;card mt-4 section-card&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header&quot;&gt;
+        &lt;h5&gt;Add New Section&lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;form [formGroup]&#x3D;&quot;sectionForm&quot; (ngSubmit)&#x3D;&quot;addSection()&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;sectionTitle&quot;&gt;Section Title&lt;/label&gt;
+            &lt;input id&#x3D;&quot;sectionTitle&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;title&quot; placeholder&#x3D;&quot;Enter section title&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;numberOfQuestions&quot;&gt;Number of Questions&lt;/label&gt;
+            &lt;input id&#x3D;&quot;numberOfQuestions&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;numberOfQuestions&quot; type&#x3D;&quot;number&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;totalMarks&quot;&gt;Total Marks&lt;/label&gt;
+            &lt;input id&#x3D;&quot;totalMarks&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;totalMarks&quot; type&#x3D;&quot;number&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;passingMarks&quot;&gt;Passing Marks&lt;/label&gt;
+            &lt;input id&#x3D;&quot;passingMarks&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;passingMarks&quot; type&#x3D;&quot;number&quot; /&gt;
+          &lt;/div&gt;
+          &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary btn-block mt-3&quot;&gt;Add Section&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Display Sections --&gt;
+  &lt;div *ngFor&#x3D;&quot;let section of sections&quot; class&#x3D;&quot;section mt-4&quot;&gt;
+    &lt;div class&#x3D;&quot;card section-card&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header d-flex justify-content-between align-items-center section-header&quot;&gt;
+        &lt;h5&gt;{{ section.title }}&lt;/h5&gt;
+        &lt;div&gt;
+          &lt;button class&#x3D;&quot;btn btn-link&quot; (click)&#x3D;&quot;toggleSection(section.sectionId)&quot;&gt;
+            {{ isSectionExpanded(section.sectionId) ? &#x27;Minimize&#x27; : &#x27;Maximize&#x27; }}
+          &lt;/button&gt;
+          &lt;button class&#x3D;&quot;btn btn-info btn-sm&quot; (click)&#x3D;&quot;openEditPopup(section)&quot;&gt;Edit Section&lt;/button&gt;
+          &lt;button class&#x3D;&quot;btn btn-danger btn-sm&quot; (click)&#x3D;&quot;removeSection(section.sectionId)&quot;&gt;Remove Section&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div *ngIf&#x3D;&quot;isSectionExpanded(section.sectionId)&quot; class&#x3D;&quot;card-body section-body&quot;&gt;
+        &lt;h6&gt;Questions:&lt;/h6&gt;
+        &lt;div *ngFor&#x3D;&quot;let question of section.questions&quot; class&#x3D;&quot;question mt-3&quot;&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center question-header&quot;&gt;
+            &lt;p&gt;{{ question.questionText }}&lt;/p&gt;
+            &lt;div&gt;
+              &lt;button class&#x3D;&quot;btn btn-link&quot; (click)&#x3D;&quot;toggleQuestion(question.questionId)&quot;&gt;
+                {{ isQuestionExpanded(question.questionId) ? &#x27;Minimize&#x27; : &#x27;Maximize&#x27; }}
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;btn btn-danger btn-sm&quot; (click)&#x3D;&quot;removeQuestion(section, question.questionId)&quot;&gt;Remove
+                Question&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div *ngIf&#x3D;&quot;isQuestionExpanded(question.questionId)&quot;&gt;
+            &lt;h6&gt;Options:&lt;/h6&gt;
+            &lt;ul class&#x3D;&quot;list-group&quot;&gt;
+              &lt;li *ngFor&#x3D;&quot;let option of question.options&quot;
+                class&#x3D;&quot;list-group-item d-flex justify-content-between align-items-center&quot;&gt;
+                {{ option.optionText }} ({{ option.isCorrect ? &#x27;Correct&#x27; : &#x27;Incorrect&#x27; }})
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Add New Question Form --&gt;
+        &lt;div class&#x3D;&quot;card mt-3&quot;&gt;
+          &lt;div class&#x3D;&quot;card-header&quot;&gt;
+            &lt;h5&gt;Add New Question&lt;/h5&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;questionForm&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;questionText&quot;&gt;Question Text&lt;/label&gt;
+                &lt;input id&#x3D;&quot;questionText&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;questionText&quot;
+                  placeholder&#x3D;&quot;Enter question text&quot; /&gt;
+              &lt;/div&gt;
+
+              &lt;!-- Add Option Form --&gt;
+              &lt;h6&gt;Add Options:&lt;/h6&gt;
+              &lt;form [formGroup]&#x3D;&quot;optionForm&quot; (ngSubmit)&#x3D;&quot;addOption()&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;label for&#x3D;&quot;optionText&quot;&gt;Option Text&lt;/label&gt;
+                  &lt;input id&#x3D;&quot;optionText&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;optionText&quot;
+                    placeholder&#x3D;&quot;Enter option text&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;label for&#x3D;&quot;isCorrect&quot;&gt;Is Correct?&lt;/label&gt;
+                  &lt;input id&#x3D;&quot;isCorrect&quot; type&#x3D;&quot;checkbox&quot; formControlName&#x3D;&quot;isCorrect&quot; /&gt;
+                &lt;/div&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-secondary&quot;&gt;Add Option&lt;/button&gt;
+              &lt;/form&gt;
+
+              &lt;!-- Display Options for New Question --&gt;
+              &lt;ul class&#x3D;&quot;list-group mt-3&quot;&gt;
+                &lt;li *ngFor&#x3D;&quot;let option of newQuestionOptions&quot;
+                  class&#x3D;&quot;list-group-item d-flex justify-content-between align-items-center&quot;&gt;
+                  {{ option.optionText }} ({{ option.isCorrect ? &#x27;Correct&#x27; : &#x27;Incorrect&#x27; }})
+                  &lt;button class&#x3D;&quot;btn btn-danger btn-sm&quot; (click)&#x3D;&quot;removeNewOption(option.optionText)&quot;&gt;Remove
+                    Option&lt;/button&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+
+              &lt;!-- Save Question Button (only enabled if there are options added) --&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary mt-3&quot; [disabled]&#x3D;&quot;newQuestionOptions.length &#x3D;&#x3D;&#x3D; 0&quot;
+                (click)&#x3D;&quot;saveQuestion(section)&quot;&gt;
+                Save Question
+              &lt;/button&gt;
+            &lt;/form&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Edit Section Popup --&gt;
+  &lt;div *ngIf&#x3D;&quot;isEditMode&quot; class&#x3D;&quot;popup-overlay&quot;&gt;
+    &lt;div class&#x3D;&quot;popup&quot;&gt;
+      &lt;div class&#x3D;&quot;popup-header&quot;&gt;
+        &lt;h5&gt;Edit Section&lt;/h5&gt;
+        &lt;button class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;closeEditPopup()&quot;&gt;Close&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;popup-body&quot;&gt;
+        &lt;form [formGroup]&#x3D;&quot;editSectionForm&quot; (ngSubmit)&#x3D;&quot;saveEditedSection()&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;sectionTitle&quot;&gt;Section Title&lt;/label&gt;
+            &lt;input id&#x3D;&quot;sectionTitle&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;title&quot; placeholder&#x3D;&quot;Enter section title&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;numberOfQuestions&quot;&gt;Number of Questions&lt;/label&gt;
+            &lt;input id&#x3D;&quot;numberOfQuestions&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;numberOfQuestions&quot; type&#x3D;&quot;number&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;totalMarks&quot;&gt;Total Marks&lt;/label&gt;
+            &lt;input id&#x3D;&quot;totalMarks&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;totalMarks&quot; type&#x3D;&quot;number&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label for&#x3D;&quot;passingMarks&quot;&gt;Passing Marks&lt;/label&gt;
+            &lt;input id&#x3D;&quot;passingMarks&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;passingMarks&quot; type&#x3D;&quot;number&quot; /&gt;
+          &lt;/div&gt;
+          &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary btn-block mt-3&quot;&gt;Save Changes&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./admin-section.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Basic styling for form elements */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Section and question styling */
+.section {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section h4 {
+  margin: 0;
+}
+
+.question {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.question p {
+  margin: 0;
+}
+
+.question button {
+  margin-left: 15px;
+}
+
+/* Add Section and Add Question form visibility */
+.add-section-form, .add-question-form {
+  margin-top: 20px;
+  background-color: #eef;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.add-section-form h3, .add-question-form h3 {
+  margin-bottom: 10px;
+}
+
+/* Form buttons */
+.btn {
+  margin-top: 10px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-body {
+  margin-top: 20px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-admin-navbar></app-admin-navbar><div class="container mt-5">  <!-- Dropdown to select an exam -->  <div class="form-group">    <label for="exam">Select Exam:</label>    <select class="form-control select-exam" id="exam" (change)="onSelectExam($event)" [formControl]="examFormControl">      <option value="" disabled selected>Please select exam</option>      <option *ngFor="let exam of exams" [value]="exam.examId">{{ exam.title }}</option>    </select>  </div>  <!-- Add Section Form -->  <div *ngIf="selectedExamId">    <div class="card mt-4 section-card">      <div class="card-header">        <h5>Add New Section</h5>      </div>      <div class="card-body">        <form [formGroup]="sectionForm" (ngSubmit)="addSection()">          <div class="form-group">            <label for="sectionTitle">Section Title</label>            <input id="sectionTitle" class="form-control" formControlName="title" placeholder="Enter section title" />          </div>          <div class="form-group">            <label for="numberOfQuestions">Number of Questions</label>            <input id="numberOfQuestions" class="form-control" formControlName="numberOfQuestions" type="number" />          </div>          <div class="form-group">            <label for="totalMarks">Total Marks</label>            <input id="totalMarks" class="form-control" formControlName="totalMarks" type="number" />          </div>          <div class="form-group">            <label for="passingMarks">Passing Marks</label>            <input id="passingMarks" class="form-control" formControlName="passingMarks" type="number" />          </div>          <button type="submit" class="btn btn-primary btn-block mt-3">Add Section</button>        </form>      </div>    </div>  </div>  <!-- Display Sections -->  <div *ngFor="let section of sections" class="section mt-4">    <div class="card section-card">      <div class="card-header d-flex justify-content-between align-items-center section-header">        <h5>{{ section.title }}</h5>        <div>          <button class="btn btn-link" (click)="toggleSection(section.sectionId)">            {{ isSectionExpanded(section.sectionId) ? \'Minimize\' : \'Maximize\' }}          </button>          <button class="btn btn-info btn-sm" (click)="openEditPopup(section)">Edit Section</button>          <button class="btn btn-danger btn-sm" (click)="removeSection(section.sectionId)">Remove Section</button>        </div>      </div>      <div *ngIf="isSectionExpanded(section.sectionId)" class="card-body section-body">        <h6>Questions:</h6>        <div *ngFor="let question of section.questions" class="question mt-3">          <div class="d-flex justify-content-between align-items-center question-header">            <p>{{ question.questionText }}</p>            <div>              <button class="btn btn-link" (click)="toggleQuestion(question.questionId)">                {{ isQuestionExpanded(question.questionId) ? \'Minimize\' : \'Maximize\' }}              </button>              <button class="btn btn-danger btn-sm" (click)="removeQuestion(section, question.questionId)">Remove                Question</button>            </div>          </div>          <div *ngIf="isQuestionExpanded(question.questionId)">            <h6>Options:</h6>            <ul class="list-group">              <li *ngFor="let option of question.options"                class="list-group-item d-flex justify-content-between align-items-center">                {{ option.optionText }} ({{ option.isCorrect ? \'Correct\' : \'Incorrect\' }})              </li>            </ul>          </div>        </div>        <!-- Add New Question Form -->        <div class="card mt-3">          <div class="card-header">            <h5>Add New Question</h5>          </div>          <div class="card-body">            <form [formGroup]="questionForm">              <div class="form-group">                <label for="questionText">Question Text</label>                <input id="questionText" class="form-control" formControlName="questionText"                  placeholder="Enter question text" />              </div>              <!-- Add Option Form -->              <h6>Add Options:</h6>              <form [formGroup]="optionForm" (ngSubmit)="addOption()">                <div class="form-group">                  <label for="optionText">Option Text</label>                  <input id="optionText" class="form-control" formControlName="optionText"                    placeholder="Enter option text" />                </div>                <div class="form-group">                  <label for="isCorrect">Is Correct?</label>                  <input id="isCorrect" type="checkbox" formControlName="isCorrect" />                </div>                <button type="submit" class="btn btn-secondary">Add Option</button>              </form>              <!-- Display Options for New Question -->              <ul class="list-group mt-3">                <li *ngFor="let option of newQuestionOptions"                  class="list-group-item d-flex justify-content-between align-items-center">                  {{ option.optionText }} ({{ option.isCorrect ? \'Correct\' : \'Incorrect\' }})                  <button class="btn btn-danger btn-sm" (click)="removeNewOption(option.optionText)">Remove                    Option</button>                </li>              </ul>              <!-- Save Question Button (only enabled if there are options added) -->              <button class="btn btn-primary mt-3" [disabled]="newQuestionOptions.length === 0"                (click)="saveQuestion(section)">                Save Question              </button>            </form>          </div>        </div>      </div>    </div>  </div>  <!-- Edit Section Popup -->  <div *ngIf="isEditMode" class="popup-overlay">    <div class="popup">      <div class="popup-header">        <h5>Edit Section</h5>        <button class="btn btn-secondary" (click)="closeEditPopup()">Close</button>      </div>      <div class="popup-body">        <form [formGroup]="editSectionForm" (ngSubmit)="saveEditedSection()">          <div class="form-group">            <label for="sectionTitle">Section Title</label>            <input id="sectionTitle" class="form-control" formControlName="title" placeholder="Enter section title" />          </div>          <div class="form-group">            <label for="numberOfQuestions">Number of Questions</label>            <input id="numberOfQuestions" class="form-control" formControlName="numberOfQuestions" type="number" />          </div>          <div class="form-group">            <label for="totalMarks">Total Marks</label>            <input id="totalMarks" class="form-control" formControlName="totalMarks" type="number" />          </div>          <div class="form-group">            <label for="passingMarks">Passing Marks</label>            <input id="passingMarks" class="form-control" formControlName="passingMarks" type="number" />          </div>          <button type="submit" class="btn btn-primary btn-block mt-3">Save Changes</button>        </form>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminExamComponent', 'selector': 'app-admin-exam'},{'name': 'AdminNavbarComponent', 'selector': 'app-admin-navbar'},{'name': 'AdminReportComponent', 'selector': 'app-admin-report'},{'name': 'AdminResultComponent', 'selector': 'app-admin-result'},{'name': 'AdminSectionComponent', 'selector': 'app-admin-section'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ExamComponent', 'selector': 'app-exam'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'ResultHistoryComponent', 'selector': 'app-result-history'},{'name': 'SectionComponent', 'selector': 'app-section'},{'name': 'UserComponent', 'selector': 'app-user'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminSectionComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminSectionComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

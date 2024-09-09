@@ -1,0 +1,733 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>e-bill documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">e-bill documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ResultComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/User/result/result.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-result</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./result.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./result.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#examResult" >examResult</a>
+                            </li>
+                            <li>
+                                <a href="#passed" >passed</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#exit" >exit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/User/result/result.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exit"></a>
+                    <span class="name">
+                        <span ><b>exit</b></span>
+                        <a href="#exit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>exit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/app/User/result/result.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/User/result/result.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="examResult"></a>
+                    <span class="name">
+                        <span ><b>examResult</b></span>
+                        <a href="#examResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/User/result/result.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passed"></a>
+                    <span class="name">
+                        <span ><b>passed</b></span>
+                        <a href="#passed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/User/result/result.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-result&#x27;,
+  templateUrl: &#x27;./result.component.html&#x27;,
+  styleUrls: [&#x27;./result.component.css&#x27;],
+  standalone: true,
+  imports: [CommonModule]
+})
+export class ResultComponent implements OnInit {
+  examResult: any &#x3D; null;  // Holds the exam result data
+  passed: boolean &#x3D; false; // Holds the overall result pass/fail status
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    // Fetch the exam result from localStorage
+    const resultData &#x3D; localStorage.getItem(&#x27;examResult&#x27;);
+    if (resultData) {
+      this.examResult &#x3D; JSON.parse(resultData);
+      this.passed &#x3D; this.examResult.passed; // Assuming &#x27;passed&#x27; is part of the response
+    }
+  }
+
+  // Method to exit and clear localStorage
+  exit(): void {
+    localStorage.clear();  // Clear the localStorage
+    this.router.navigate([&#x27;/user-dashboard&#x27;]);  // Redirect to user dashboard
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-4&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center mb-4&quot;&gt;Exam Result&lt;/h2&gt;
+
+    &lt;!-- Overall Result --&gt;
+    &lt;div class&#x3D;&quot;text-center mb-4&quot;&gt;
+        &lt;h3 *ngIf&#x3D;&quot;passed&quot; class&#x3D;&quot;text-success&quot;&gt;
+            ✅ Congratulations! You Passed!
+        &lt;/h3&gt;
+        &lt;h3 *ngIf&#x3D;&quot;!passed&quot; class&#x3D;&quot;text-danger&quot;&gt;
+            ❌ Unfortunately, You Failed.
+        &lt;/h3&gt;
+    &lt;/div&gt;
+
+    &lt;br&gt;
+    &lt;div class&#x3D;&quot;exam-details mb-4 text-center&quot;&gt;
+        &lt;div class&#x3D;&quot;row no-gutters&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;p&gt;&lt;strong&gt;Attempt Number:&lt;/strong&gt; {{ examResult.attemptNumber }}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;p&gt;&lt;strong&gt;Total Score:&lt;/strong&gt; {{ examResult.totalScore }}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;p&gt;&lt;strong&gt;Percentage:&lt;/strong&gt; {{ examResult.percentage | number:&#x27;1.2-2&#x27; }}%&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;p&gt;&lt;strong&gt;Duration:&lt;/strong&gt; {{ examResult.duration }} minutes&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;\
+
+    &lt;!-- Section-wise Results --&gt;
+    &lt;div class&#x3D;&quot;section-results mt-4&quot;&gt;
+        &lt;h4&gt;Section-wise Results&lt;/h4&gt;
+        &lt;table class&#x3D;&quot;table table-striped&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;#&lt;/th&gt;
+                    &lt;th&gt;Section ID&lt;/th&gt;
+                    &lt;th&gt;Attempted Questions&lt;/th&gt;
+                    &lt;th&gt;Correct Answers&lt;/th&gt;
+                    &lt;th&gt;Score&lt;/th&gt;
+                    &lt;th&gt;Status&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr *ngFor&#x3D;&quot;let section of examResult.sectionResults; let i &#x3D; index&quot;&gt;
+                    &lt;td&gt;{{ i + 1 }}&lt;/td&gt;
+                    &lt;td&gt;{{ section.sectionId }}&lt;/td&gt;
+                    &lt;td&gt;{{ section.attemptedQuestions }}&lt;/td&gt;
+                    &lt;td&gt;{{ section.correctAnswers }}&lt;/td&gt;
+                    &lt;td&gt;{{ section.sectionScore }}&lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;span [ngClass]&#x3D;&quot;{&#x27;text-success&#x27;: section.isPassed, &#x27;text-danger&#x27;: !section.isPassed}&quot;&gt;
+                            {{ section.isPassed ? &#x27;✅ Pass&#x27; : &#x27;❌ Fail&#x27; }}
+                        &lt;/span&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Exit Button --&gt;
+    &lt;div class&#x3D;&quot;text-center mt-4&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;exit()&quot;&gt;Exit&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./result.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.text-success {
+    color: green;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  
+  h3 i {
+    font-size: 1.5rem;
+  }
+  
+  .table-striped {
+    width: 100%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+  }
+  
+  .table-striped th, .table-striped td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .text-success {
+    color: green;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  
+  .table-striped th, .table-striped td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-4">    <h2 class="text-center mb-4">Exam Result</h2>    <!-- Overall Result -->    <div class="text-center mb-4">        <h3 *ngIf="passed" class="text-success">            ✅ Congratulations! You Passed!        </h3>        <h3 *ngIf="!passed" class="text-danger">            ❌ Unfortunately, You Failed.        </h3>    </div>    <br>    <div class="exam-details mb-4 text-center">        <div class="row no-gutters">            <div class="col-md-6">                <p><strong>Attempt Number:</strong> {{ examResult.attemptNumber }}</p>            </div>            <div class="col-md-6">                <p><strong>Total Score:</strong> {{ examResult.totalScore }}</p>            </div>            <div class="col-md-6">                <p><strong>Percentage:</strong> {{ examResult.percentage | number:\'1.2-2\' }}%</p>            </div>            <div class="col-md-6">                <p><strong>Duration:</strong> {{ examResult.duration }} minutes</p>            </div>        </div>    </div>\    <!-- Section-wise Results -->    <div class="section-results mt-4">        <h4>Section-wise Results</h4>        <table class="table table-striped">            <thead>                <tr>                    <th>#</th>                    <th>Section ID</th>                    <th>Attempted Questions</th>                    <th>Correct Answers</th>                    <th>Score</th>                    <th>Status</th>                </tr>            </thead>            <tbody>                <tr *ngFor="let section of examResult.sectionResults; let i = index">                    <td>{{ i + 1 }}</td>                    <td>{{ section.sectionId }}</td>                    <td>{{ section.attemptedQuestions }}</td>                    <td>{{ section.correctAnswers }}</td>                    <td>{{ section.sectionScore }}</td>                    <td>                        <span [ngClass]="{\'text-success\': section.isPassed, \'text-danger\': !section.isPassed}">                            {{ section.isPassed ? \'✅ Pass\' : \'❌ Fail\' }}                        </span>                    </td>                </tr>            </tbody>        </table>    </div>    <!-- Exit Button -->    <div class="text-center mt-4">        <button class="btn btn-primary" (click)="exit()">Exit</button>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminExamComponent', 'selector': 'app-admin-exam'},{'name': 'AdminNavbarComponent', 'selector': 'app-admin-navbar'},{'name': 'AdminReportComponent', 'selector': 'app-admin-report'},{'name': 'AdminResultComponent', 'selector': 'app-admin-result'},{'name': 'AdminSectionComponent', 'selector': 'app-admin-section'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ExamComponent', 'selector': 'app-exam'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'ResultHistoryComponent', 'selector': 'app-result-history'},{'name': 'SectionComponent', 'selector': 'app-section'},{'name': 'UserComponent', 'selector': 'app-user'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ResultComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ResultComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1010 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>e-bill documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">e-bill documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminReportComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/admin-report/admin-report.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin-report</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                                <code><a href="../components/AdminNavbarComponent.html" target="_self" >AdminNavbarComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./admin-report.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin-report.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#reportData" >reportData</a>
+                            </li>
+                            <li>
+                                <a href="#reportOptions" >reportOptions</a>
+                            </li>
+                            <li>
+                                <a href="#selectedReport" >selectedReport</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#downloadCSV" >downloadCSV</a>
+                            </li>
+                            <li>
+                                <a href="#fetchReportData" >fetchReportData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(reportService: <a href="../injectables/ReportService.html" target="_self">ReportService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reportService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ReportService.html" target="_self" >ReportService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadCSV"></a>
+                    <span class="name">
+                        <span ><b>downloadCSV</b></span>
+                        <a href="#downloadCSV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadCSV()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchReportData"></a>
+                    <span class="name">
+                        <span ><b>fetchReportData</b></span>
+                        <a href="#fetchReportData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchReportData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reportData"></a>
+                    <span class="name">
+                        <span ><b>reportData</b></span>
+                        <a href="#reportData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reportOptions"></a>
+                    <span class="name">
+                        <span ><b>reportOptions</b></span>
+                        <a href="#reportOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { value: &#x27;testsPerDay&#x27;, label: &#x27;Number of tests taken per day&#x27; },
+    { value: &#x27;finishedBeforeTime&#x27;, label: &#x27;Tests finished before time by 20%&#x27; },
+    { value: &#x27;autoSubmitted&#x27;, label: &#x27;Auto-submitted tests after 30 mins&#x27; },
+    { value: &#x27;markedForReview&#x27;, label: &#x27;Marked for review&#x27; }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedReport"></a>
+                    <span class="name">
+                        <span ><b>selectedReport</b></span>
+                        <a href="#selectedReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin/admin-report/admin-report.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ReportService } from &#x27;../../services/report.service&#x27;;
+import { saveAs } from &#x27;file-saver&#x27;;  // To handle CSV download
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { AdminNavbarComponent } from &#x27;../admin-navbar/admin-navbar.component&#x27;;
+
+@Component({
+  selector: &#x27;app-admin-report&#x27;,
+  templateUrl: &#x27;./admin-report.component.html&#x27;,
+  styleUrls: [&#x27;./admin-report.component.css&#x27;],
+  standalone: true,
+  imports: [CommonModule, FormsModule, AdminNavbarComponent]
+})
+export class AdminReportComponent implements OnInit {
+  reportOptions &#x3D; [
+    { value: &#x27;testsPerDay&#x27;, label: &#x27;Number of tests taken per day&#x27; },
+    { value: &#x27;finishedBeforeTime&#x27;, label: &#x27;Tests finished before time by 20%&#x27; },
+    { value: &#x27;autoSubmitted&#x27;, label: &#x27;Auto-submitted tests after 30 mins&#x27; },
+    { value: &#x27;markedForReview&#x27;, label: &#x27;Marked for review&#x27; }
+  ];
+
+  selectedReport: string &#x3D; &#x27;&#x27;;
+  reportData: any[] &#x3D; [];
+  isLoading &#x3D; false;
+  errorMessage &#x3D; &#x27;&#x27;;
+
+  constructor(private reportService: ReportService) { }
+
+  ngOnInit(): void { }
+
+  // Fetch report data based on selected report
+  fetchReportData(): void {
+    this.isLoading &#x3D; true;
+    this.reportData &#x3D; [];
+    this.errorMessage &#x3D; &#x27;&#x27;;
+
+    switch (this.selectedReport) {
+      case &#x27;testsPerDay&#x27;:
+        this.reportService.getTestsPerDay().subscribe(
+          (data) &#x3D;&gt; {
+            this.reportData &#x3D; data || [];
+            this.isLoading &#x3D; false;
+          },
+          (error) &#x3D;&gt; {
+            this.errorMessage &#x3D; &#x27;Error fetching data&#x27;;
+            this.isLoading &#x3D; false;
+          }
+        );
+        break;
+      case &#x27;finishedBeforeTime&#x27;:  // Added new report case
+        this.reportService.getTestsFinishedBeforeTime().subscribe(
+          (data) &#x3D;&gt; {
+            this.reportData &#x3D; data || [];
+            this.isLoading &#x3D; false;
+          },
+          (error) &#x3D;&gt; {
+            this.errorMessage &#x3D; &#x27;Error fetching data&#x27;;
+            this.isLoading &#x3D; false;
+          }
+        );
+        break;
+      case &#x27;markedForReview&#x27;:
+        this.reportService.getTestsMarkedForReview().subscribe(
+          (data) &#x3D;&gt; {
+            this.reportData &#x3D; data || [];
+            this.isLoading &#x3D; false;
+          },
+          (error) &#x3D;&gt; {
+            this.errorMessage &#x3D; &#x27;Error fetching data&#x27;;
+            this.isLoading &#x3D; false;
+          }
+        );
+        break;
+      case &#x27;autoSubmitted&#x27;:
+        this.reportService.getAutoSubmittedAfter30Mins().subscribe(
+          (data) &#x3D;&gt; {
+            this.reportData &#x3D; data || [];
+            this.isLoading &#x3D; false;
+          },
+          (error) &#x3D;&gt; {
+            this.errorMessage &#x3D; &#x27;Error fetching data&#x27;;
+            this.isLoading &#x3D; false;
+          }
+        );
+        break;
+      default:
+        this.errorMessage &#x3D; &#x27;We Are working On this Report, Please Check After Some Time.&#x27;;
+        this.isLoading &#x3D; false;
+        break;
+    }
+  }
+
+  // Download report data as CSV
+downloadCSV(): void {
+  let csvData &#x3D; &#x27;&#x27;;
+  let headers &#x3D; &#x27;&#x27;;
+
+  if (this.selectedReport &#x3D;&#x3D;&#x3D; &#x27;testsPerDay&#x27;) {
+    headers &#x3D; &#x27;Date,Number of Tests\n&#x27;;
+    csvData &#x3D; this.reportData.map(row &#x3D;&gt; &#x60;${row.date},${row.numberOfTests}&#x60;).join(&#x27;\n&#x27;);
+  } 
+  else if (this.selectedReport &#x3D;&#x3D;&#x3D; &#x27;finishedBeforeTime&#x27;) {
+    headers &#x3D; &#x27;Exam Result ID,User Name,User Email,Exam Title,Total Score,Percentage,Passed,Completed Date,Duration\n&#x27;;
+    csvData &#x3D; this.reportData.map(row &#x3D;&gt; 
+      &#x60;${row.examResultId},${row.userName},${row.userEmail},${row.examTitle},${row.totalScore},${row.percentage},${row.passed ? &#x27;Pass&#x27; : &#x27;Fail&#x27;},${row.completedDate},${row.duration}&#x60;
+    ).join(&#x27;\n&#x27;);
+  } 
+  else if (this.selectedReport &#x3D;&#x3D;&#x3D; &#x27;markedForReview&#x27;) {
+    headers &#x3D; &#x27;Date,Marked For Review,User Name,User Email,Exam Title,Total Score,Passed\n&#x27;;
+    csvData &#x3D; this.reportData.map(row &#x3D;&gt; 
+      &#x60;${row.completedDate},${row.markforreview},${row.userName},${row.userEmail},${row.examTitle},${row.totalScore},${row.passed ? &#x27;Pass&#x27; : &#x27;Fail&#x27;}&#x60;
+    ).join(&#x27;\n&#x27;);
+  } 
+  else if (this.selectedReport &#x3D;&#x3D;&#x3D; &#x27;autoSubmitted&#x27;) {
+    headers &#x3D; &#x27;Exam Result ID,User Name,User Email,Exam Title,Total Score,Percentage,Passed,Completed Date,Duration,Total Questions,Attempted Questions\n&#x27;;
+    csvData &#x3D; this.reportData.map(row &#x3D;&gt; 
+      &#x60;${row.examResultId},${row.userName},${row.userEmail},${row.examTitle},${row.totalScore},${row.percentage},${row.passed ? &#x27;Pass&#x27; : &#x27;Fail&#x27;},${row.completedDate},${row.duration},${row.totalQuestions},${row.attemptedQuestions}&#x60;
+    ).join(&#x27;\n&#x27;);
+  }
+
+  const blob &#x3D; new Blob([headers + csvData], { type: &#x27;text/csv&#x27; });
+  saveAs(blob, &#x60;${this.selectedReport}-report.csv&#x60;);
+}
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-admin-navbar&gt;&lt;/app-admin-navbar&gt;
+
+&lt;div class&#x3D;&quot;container mt-4&quot;&gt;
+  &lt;!-- Dropdown for selecting report --&gt;
+  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+    &lt;label for&#x3D;&quot;reportSelect&quot;&gt;Select Report:&lt;/label&gt;
+    &lt;select class&#x3D;&quot;form-control&quot; id&#x3D;&quot;reportSelect&quot; [(ngModel)]&#x3D;&quot;selectedReport&quot; (change)&#x3D;&quot;fetchReportData()&quot;&gt;
+      &lt;option value&#x3D;&quot;&quot; disabled&gt;Select a report&lt;/option&gt;
+      &lt;option *ngFor&#x3D;&quot;let report of reportOptions&quot; [value]&#x3D;&quot;report.value&quot;&gt;
+        {{ report.label }}
+      &lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Show error message if any --&gt;
+  &lt;div *ngIf&#x3D;&quot;errorMessage&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
+    {{ errorMessage }}
+  &lt;/div&gt;
+
+  &lt;!-- Loading Spinner --&gt;
+  &lt;div *ngIf&#x3D;&quot;isLoading&quot; class&#x3D;&quot;text-center&quot;&gt;
+    &lt;div class&#x3D;&quot;spinner-border&quot; role&#x3D;&quot;status&quot;&gt;
+      &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Display the report data in table format --&gt;
+  &lt;div *ngIf&#x3D;&quot;reportData.length &gt; 0 &amp;&amp; !isLoading&quot;&gt;
+    &lt;!-- Table for &#x27;testsPerDay&#x27; --&gt;
+    &lt;div *ngIf&#x3D;&quot;selectedReport &#x3D;&#x3D;&#x3D; &#x27;testsPerDay&#x27;&quot;&gt;
+      &lt;table class&#x3D;&quot;table table-bordered mt-4&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Date&lt;/th&gt;
+            &lt;th&gt;Number of Tests&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr *ngFor&#x3D;&quot;let row of reportData&quot;&gt;
+            &lt;td&gt;{{ row.date | date: &#x27;shortDate&#x27; }}&lt;/td&gt;
+            &lt;td&gt;{{ row.numberOfTests }}&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Table for &#x27;finishedBeforeTime&#x27; --&gt;
+    &lt;div *ngIf&#x3D;&quot;selectedReport &#x3D;&#x3D;&#x3D; &#x27;finishedBeforeTime&#x27;&quot;&gt;
+      &lt;table class&#x3D;&quot;table table-bordered mt-4&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Exam Result ID&lt;/th&gt;
+            &lt;th&gt;User Name&lt;/th&gt;
+            &lt;th&gt;User Email&lt;/th&gt;
+            &lt;th&gt;Exam Title&lt;/th&gt;
+            &lt;th&gt;Total Score&lt;/th&gt;
+            &lt;th&gt;Percentage&lt;/th&gt;
+            &lt;th&gt;Passed&lt;/th&gt;
+            &lt;th&gt;Completed Date&lt;/th&gt;
+            &lt;th&gt;Duration&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr *ngFor&#x3D;&quot;let row of reportData&quot;&gt;
+            &lt;td&gt;{{ row.examResultId }}&lt;/td&gt;
+            &lt;td&gt;{{ row.userName }}&lt;/td&gt;
+            &lt;td&gt;{{ row.userEmail }}&lt;/td&gt;
+            &lt;td&gt;{{ row.examTitle }}&lt;/td&gt;
+            &lt;td&gt;{{ row.totalScore }}&lt;/td&gt;
+            &lt;td&gt;{{ row.percentage | number:&#x27;1.2-2&#x27; }}%&lt;/td&gt;
+            &lt;td&gt;
+              &lt;span [ngClass]&#x3D;&quot;{&#x27;text-success&#x27;: row.passed, &#x27;text-danger&#x27;: !row.passed}&quot;&gt;
+                {{ row.passed ? &#x27;Pass&#x27; : &#x27;Fail&#x27; }}
+              &lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;{{ row.completedDate | date: &#x27;short&#x27; }}&lt;/td&gt;
+            &lt;td&gt;{{ row.duration }} min&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Table for &#x27;markedForReview&#x27; --&gt;
+    &lt;div *ngIf&#x3D;&quot;selectedReport &#x3D;&#x3D;&#x3D; &#x27;markedForReview&#x27;&quot;&gt;
+      &lt;table class&#x3D;&quot;table table-bordered mt-4&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Date&lt;/th&gt;
+            &lt;th&gt;Marked For Review&lt;/th&gt;
+            &lt;th&gt;User Name&lt;/th&gt;
+            &lt;th&gt;User Email&lt;/th&gt;
+            &lt;th&gt;Exam Title&lt;/th&gt;
+            &lt;th&gt;Total Score&lt;/th&gt;
+            &lt;th&gt;Passed&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr *ngFor&#x3D;&quot;let row of reportData&quot;&gt;
+            &lt;td&gt;{{ row.completedDate | date: &#x27;shortDate&#x27; }}&lt;/td&gt;
+            &lt;td&gt;{{ row.markforreview }}&lt;/td&gt;
+            &lt;td&gt;{{ row.userName }}&lt;/td&gt;
+            &lt;td&gt;{{ row.userEmail }}&lt;/td&gt;
+            &lt;td&gt;{{ row.examTitle }}&lt;/td&gt;
+            &lt;td&gt;{{ row.totalScore }}&lt;/td&gt;
+            &lt;td&gt;
+              &lt;span [ngClass]&#x3D;&quot;{&#x27;text-success&#x27;: row.passed, &#x27;text-danger&#x27;: !row.passed}&quot;&gt;
+                {{ row.passed ? &#x27;Pass&#x27; : &#x27;Fail&#x27; }}
+              &lt;/span&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Table for &#x27;autoSubmitted&#x27; --&gt;
+    &lt;div *ngIf&#x3D;&quot;selectedReport &#x3D;&#x3D;&#x3D; &#x27;autoSubmitted&#x27;&quot;&gt;
+      &lt;table class&#x3D;&quot;table table-bordered mt-4&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Exam Result ID&lt;/th&gt;
+            &lt;th&gt;User Name&lt;/th&gt;
+            &lt;th&gt;User Email&lt;/th&gt;
+            &lt;th&gt;Exam Title&lt;/th&gt;
+            &lt;th&gt;Total Score&lt;/th&gt;
+            &lt;th&gt;Percentage&lt;/th&gt;
+            &lt;th&gt;Passed&lt;/th&gt;
+            &lt;th&gt;Completed Date&lt;/th&gt;
+            &lt;th&gt;Duration&lt;/th&gt;
+            &lt;th&gt;Total Questions&lt;/th&gt;
+            &lt;th&gt;Attempted Questions&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr *ngFor&#x3D;&quot;let row of reportData&quot;&gt;
+            &lt;td&gt;{{ row.examResultId }}&lt;/td&gt;
+            &lt;td&gt;{{ row.userName }}&lt;/td&gt;
+            &lt;td&gt;{{ row.userEmail }}&lt;/td&gt;
+            &lt;td&gt;{{ row.examTitle }}&lt;/td&gt;
+            &lt;td&gt;{{ row.totalScore }}&lt;/td&gt;
+            &lt;td&gt;{{ row.percentage | number:&#x27;1.2-2&#x27; }}%&lt;/td&gt;
+            &lt;td&gt;
+              &lt;span [ngClass]&#x3D;&quot;{&#x27;text-success&#x27;: row.passed, &#x27;text-danger&#x27;: !row.passed}&quot;&gt;
+                {{ row.passed ? &#x27;Pass&#x27; : &#x27;Fail&#x27; }}
+              &lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;{{ row.completedDate | date: &#x27;short&#x27; }}&lt;/td&gt;
+            &lt;td&gt;{{ row.duration }} min&lt;/td&gt;
+            &lt;td&gt;{{ row.totalQuestions }}&lt;/td&gt;
+            &lt;td&gt;{{ row.attemptedQuestions }}&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Button to download CSV --&gt;
+    &lt;div class&#x3D;&quot;text-right&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;downloadCSV()&quot;&gt;Download CSV&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./admin-report.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-admin-navbar></app-admin-navbar><div class="container mt-4">  <!-- Dropdown for selecting report -->  <div class="form-group">    <label for="reportSelect">Select Report:</label>    <select class="form-control" id="reportSelect" [(ngModel)]="selectedReport" (change)="fetchReportData()">      <option value="" disabled>Select a report</option>      <option *ngFor="let report of reportOptions" [value]="report.value">        {{ report.label }}      </option>    </select>  </div>  <!-- Show error message if any -->  <div *ngIf="errorMessage" class="alert alert-danger">    {{ errorMessage }}  </div>  <!-- Loading Spinner -->  <div *ngIf="isLoading" class="text-center">    <div class="spinner-border" role="status">      <span class="sr-only">Loading...</span>    </div>  </div>  <!-- Display the report data in table format -->  <div *ngIf="reportData.length > 0 && !isLoading">    <!-- Table for \'testsPerDay\' -->    <div *ngIf="selectedReport === \'testsPerDay\'">      <table class="table table-bordered mt-4">        <thead>          <tr>            <th>Date</th>            <th>Number of Tests</th>          </tr>        </thead>        <tbody>          <tr *ngFor="let row of reportData">            <td>{{ row.date | date: \'shortDate\' }}</td>            <td>{{ row.numberOfTests }}</td>          </tr>        </tbody>      </table>    </div>    <!-- Table for \'finishedBeforeTime\' -->    <div *ngIf="selectedReport === \'finishedBeforeTime\'">      <table class="table table-bordered mt-4">        <thead>          <tr>            <th>Exam Result ID</th>            <th>User Name</th>            <th>User Email</th>            <th>Exam Title</th>            <th>Total Score</th>            <th>Percentage</th>            <th>Passed</th>            <th>Completed Date</th>            <th>Duration</th>          </tr>        </thead>        <tbody>          <tr *ngFor="let row of reportData">            <td>{{ row.examResultId }}</td>            <td>{{ row.userName }}</td>            <td>{{ row.userEmail }}</td>            <td>{{ row.examTitle }}</td>            <td>{{ row.totalScore }}</td>            <td>{{ row.percentage | number:\'1.2-2\' }}%</td>            <td>              <span [ngClass]="{\'text-success\': row.passed, \'text-danger\': !row.passed}">                {{ row.passed ? \'Pass\' : \'Fail\' }}              </span>            </td>            <td>{{ row.completedDate | date: \'short\' }}</td>            <td>{{ row.duration }} min</td>          </tr>        </tbody>      </table>    </div>    <!-- Table for \'markedForReview\' -->    <div *ngIf="selectedReport === \'markedForReview\'">      <table class="table table-bordered mt-4">        <thead>          <tr>            <th>Date</th>            <th>Marked For Review</th>            <th>User Name</th>            <th>User Email</th>            <th>Exam Title</th>            <th>Total Score</th>            <th>Passed</th>          </tr>        </thead>        <tbody>          <tr *ngFor="let row of reportData">            <td>{{ row.completedDate | date: \'shortDate\' }}</td>            <td>{{ row.markforreview }}</td>            <td>{{ row.userName }}</td>            <td>{{ row.userEmail }}</td>            <td>{{ row.examTitle }}</td>            <td>{{ row.totalScore }}</td>            <td>              <span [ngClass]="{\'text-success\': row.passed, \'text-danger\': !row.passed}">                {{ row.passed ? \'Pass\' : \'Fail\' }}              </span>            </td>          </tr>        </tbody>      </table>    </div>    <!-- Table for \'autoSubmitted\' -->    <div *ngIf="selectedReport === \'autoSubmitted\'">      <table class="table table-bordered mt-4">        <thead>          <tr>            <th>Exam Result ID</th>            <th>User Name</th>            <th>User Email</th>            <th>Exam Title</th>            <th>Total Score</th>            <th>Percentage</th>            <th>Passed</th>            <th>Completed Date</th>            <th>Duration</th>            <th>Total Questions</th>            <th>Attempted Questions</th>          </tr>        </thead>        <tbody>          <tr *ngFor="let row of reportData">            <td>{{ row.examResultId }}</td>            <td>{{ row.userName }}</td>            <td>{{ row.userEmail }}</td>            <td>{{ row.examTitle }}</td>            <td>{{ row.totalScore }}</td>            <td>{{ row.percentage | number:\'1.2-2\' }}%</td>            <td>              <span [ngClass]="{\'text-success\': row.passed, \'text-danger\': !row.passed}">                {{ row.passed ? \'Pass\' : \'Fail\' }}              </span>            </td>            <td>{{ row.completedDate | date: \'short\' }}</td>            <td>{{ row.duration }} min</td>            <td>{{ row.totalQuestions }}</td>            <td>{{ row.attemptedQuestions }}</td>          </tr>        </tbody>      </table>    </div>    <!-- Button to download CSV -->    <div class="text-right">      <button class="btn btn-primary" (click)="downloadCSV()">Download CSV</button>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminExamComponent', 'selector': 'app-admin-exam'},{'name': 'AdminNavbarComponent', 'selector': 'app-admin-navbar'},{'name': 'AdminReportComponent', 'selector': 'app-admin-report'},{'name': 'AdminResultComponent', 'selector': 'app-admin-result'},{'name': 'AdminSectionComponent', 'selector': 'app-admin-section'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ExamComponent', 'selector': 'app-exam'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'ResultHistoryComponent', 'selector': 'app-result-history'},{'name': 'SectionComponent', 'selector': 'app-section'},{'name': 'UserComponent', 'selector': 'app-user'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminReportComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminReportComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
